@@ -25,28 +25,28 @@ def ventanaPortada(root):
 
     tk.Label(contenedor,
              text="Universidad Nacional Autónoma de México",
-             font=("Arial", 14, "bold")).pack(pady=5)
+             font=("Arial", 18, "bold")).pack(pady=5)
 
     tk.Label(contenedor,
              text="Facultad de Estudios Superiores Acatlán",
-             font=("Arial", 13)).pack(pady=3)
+             font=("Arial", 16)).pack(pady=3)
 
     tk.Label(contenedor,
              text="Lic. en Matemáticas Aplicadas y Computación",
-             font=("Arial", 12)).pack(pady=3)
+             font=("Arial", 14)).pack(pady=3)
 
     tk.Label(contenedor,
              text="Algebra Superior",
-             font=("Arial", 12)).pack(pady=3)
+             font=("Arial", 14)).pack(pady=3)
 
     tk.Label(contenedor,
              text="Profesor: Héctor Axel Saavedra Luis",
-             font=("Arial", 12)).pack(pady=10)
+             font=("Arial", 14)).pack(pady=10)
     
     tk.Label(contenedor,
              text="Desarrollado por:\n\n"
                   " - Jacobo Santos Marco Antonio\n",
-             font=("Arial", 12),
+             font=("Arial", 14),
              justify="center").pack(pady=15)
     
     tk.Label(contenedor,

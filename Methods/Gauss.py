@@ -16,12 +16,12 @@ class SistemaLineal:
         filas, cols = M.shape
         pivote_fila = 0
 
-        for pivote_col in range(cols - 1):  # no usar la última columna como pivote
+        for pivote_col in range(cols - 1):  # no se usa la última columna como pivote
             # buscar fila con mayor valor absoluto (evita división por 0)
             max_row = pivote_fila + np.argmax(np.abs(M[pivote_fila:, pivote_col]))
 
             if abs(M[max_row, pivote_col]) < 1e-9:
-                continue  # columna no tiene pivote, pasar a siguiente
+                continue  # columna no tiene pivote, pasa a la siguiente
 
             # intercambiar filas
             M[[pivote_fila, max_row]] = M[[max_row, pivote_fila]]
@@ -133,7 +133,7 @@ class SistemaLineal:
         # Variables libres
         libres = [j for j in range(n) if j not in pivotes]
 
-        # Solución particular (poner libres = 0)
+        # Solución particular (poner variable libres = 0)
         x_p = np.zeros(n)
         
         for i, col in enumerate(pivotes):
