@@ -40,7 +40,7 @@ def ventanaPortada(root):
              font=("Arial", 12)).pack(pady=3)
 
     tk.Label(contenedor,
-             text="Profesor: Hector Axel Saavedra",
+             text="Profesor: Héctor Axel Saavedra Luis",
              font=("Arial", 12)).pack(pady=10)
     
     tk.Label(contenedor,
