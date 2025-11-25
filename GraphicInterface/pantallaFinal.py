@@ -21,14 +21,14 @@ def pantallaFinal(root):
     frame.pack(expand=True)
 
     titulo = tk.Label(frame,
-                      text="¡Gracias por usar PySolve Interactive!",
+                      text="¡Gracias por usar Gauss-Solvex!",
                       font=("Georgia", 22, "bold"))
     titulo.pack(pady=30)
 
     creditos = tk.Label(frame,
-                        text=("Este programa fue desarrollado con dedicación.\n"
-                              "Agradecemos especialmente al profesor\n"
-                              "Cueriel Garcia Carlos Pedro por su vocación docente."),
+                        text=("Este programa fue desarrollado en FES Acatlan UNAM.\n"
+                              "Elaborado por: \n"
+                              "Jacobo Santos Marco Antonio"),
                         font=("Arial", 14),
                         justify="center")
     creditos.pack(pady=20)
