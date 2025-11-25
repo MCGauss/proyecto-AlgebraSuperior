@@ -8,7 +8,7 @@ class VentanaGauss:
         self.root = root
         self.root.title("Método de Gauss - Clasificación y Solución")
 
-        tk.Label(root, text="Tamaño del sistema (n):").pack()
+        tk.Label(root, text="Tamaño del sistema (n):").pack(pady=5)
         self.n_entry = tk.Entry(root)
         self.n_entry.pack()
 

@@ -19,7 +19,7 @@ from GraphicInterface.ventanaPortada import ventanaPortada
 def main():
     # Inicializar pygame para música
     pygame.mixer.init()
-    ruta_musica = os.path.join(ruta_proyecto, "Assets", "Rivendell - Howard Shore.mp3")
+    ruta_musica = os.path.join(ruta_proyecto, "Assets", "Man of the World.mp3")
 
     if os.path.exists(ruta_musica):
         pygame.mixer.music.load(ruta_musica)
