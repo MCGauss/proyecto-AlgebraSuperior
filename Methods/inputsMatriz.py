@@ -52,5 +52,8 @@ class VentanaMatriz:
             return
 
         self.callback(A, b)
-        self.win.destroy()
+        #self.win.destroy() se comenta para que no se elimine ventana de matriz 
+        
+
+
 
