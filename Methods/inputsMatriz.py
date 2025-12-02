@@ -7,13 +7,13 @@ class VentanaMatriz:
         self.callback = callback
 
         self.win = tk.Toplevel(root)
-        self.win.title("Ingresar matriz A y vector b")
+        self.win.title("Ingresar Sistema")
 
         # =================================================
         # FRAME CENTRAL (esto permite centrar toda la matriz)
         # =================================================
         frame = tk.Frame(self.win)
-        frame.pack(expand=True)   # ← centra contenido horizontal y verticalmente
+        frame.pack(expand=True)   #  centra contenido horizontal y verticalmente
 
         # ---- Etiqueta de A ----
         tk.Label(frame, text="Matriz A").grid(row=0, column=0, columnspan=n, pady=5)

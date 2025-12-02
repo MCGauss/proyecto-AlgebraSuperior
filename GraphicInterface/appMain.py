@@ -27,7 +27,7 @@ def main():
 
     # Crear ventana principal
     root = tk.Tk()
-    root.title("Proyecto Gauss - PySolve Interactive")
+    root.title("Gauss-Solvex")
     root.geometry("700x500")
     root.minsize(500, 400)
 
