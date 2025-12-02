@@ -57,8 +57,6 @@ class VentanaGauss:
         msg += "Vectores paramétricos:\n"
         for v in sol["vectores_parametricos"]:
             msg += f"{v}\n"
-
-        msg += f"\nVariables libres: {sol['variables_libres']}\n\n"
         msg += "Expresión completa:\n"
         msg += sol["expresion_parametrica"]
 
