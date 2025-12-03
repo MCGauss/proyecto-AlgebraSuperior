@@ -184,11 +184,4 @@ class SistemaLineal:
 
         else:
             return {"clasificacion": "Caso no esperado"}
-
-
-
-
-
-
-
- 
+        

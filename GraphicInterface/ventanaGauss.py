@@ -45,7 +45,7 @@ class VentanaGauss:
         # CASO 2: Solución única
         # ===============================
         if "unica" in sol:
-            msg += f"Solución única:\n{sol['unica']}"
+            msg += f"Solución única:\n{vector_lindo(sol['unica'])}"
             messagebox.showinfo("Resultado", msg)
             return
 
@@ -56,8 +56,8 @@ class VentanaGauss:
 
         msg += f"Solución particular:\n{vector_lindo(sol['particular'])}\n\n"
         msg += "Vectores paramétricos:\n"
-        for v in sol["vectores_parametricos"]:
-            msg += f"{vector_lindo(v)}\n"
+        for i, v in enumerate(sol["vectores_parametricos"]):
+            msg += f"S{i+1} = {vector_lindo(v)}\n\n"
         msg += "Expresión completa:\n"
         msg += sol["expresion_parametrica"]
 
