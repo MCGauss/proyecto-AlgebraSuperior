@@ -168,9 +168,9 @@ class SistemaLineal:
         elif clasificacion == "Infinitas soluciones":
             x_p, vectores, libres = self.solucion_general_parametrica()
 
-            expresion = "x = " + vector_lindo(x_p)
+            expresion = "(X1,X2,...,Xn) = \n\n" + vector_lindo(x_p)
             for i, v in enumerate(vectores):
-                expresion += f"  +  t{i+1} * {vector_lindo(v)}"
+                expresion += f" \n\n +  t{i+1} * {vector_lindo(v)}\n"
 
             return {
                 "clasificacion": clasificacion,
