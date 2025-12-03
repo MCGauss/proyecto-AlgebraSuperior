@@ -3,11 +3,11 @@ from tkinter import messagebox
 from Methods.inputsMatriz import VentanaMatriz
 from Methods.Gauss import SistemaLineal
 
+
 class VentanaGauss:
     def __init__(self, root):
         self.root = root
-        self.root.title("Método de Gauss - Clasificación y Solución")
-
+        self.root.title("Tamaño del Sistema")
         tk.Label(root, text="Tamaño del sistema (n):").pack(pady=5)
         self.n_entry = tk.Entry(root)
         self.n_entry.pack()
@@ -53,12 +53,11 @@ class VentanaGauss:
         # CASO 3: Infinitas soluciones
         # ===============================
         msg += "Solución general paramétrica:\n\n"
-        msg += f"Solución particular:\n{sol['particular']}\n\n"
+
+        msg += f"Solución particular:\n{vector_lindo(sol['particular'])}\n\n"
         msg += "Vectores paramétricos:\n"
         for v in sol["vectores_parametricos"]:
-            msg += f"{v}\n"
-
-        msg += f"\nVariables libres: {sol['variables_libres']}\n\n"
+            msg += f"{vector_lindo(v)}\n"
         msg += "Expresión completa:\n"
         msg += sol["expresion_parametrica"]
 

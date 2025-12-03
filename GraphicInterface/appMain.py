@@ -19,7 +19,8 @@ from GraphicInterface.ventanaPortada import ventanaPortada
 def main():
     # Inicializar pygame para música
     pygame.mixer.init()
-    ruta_musica = os.path.join(ruta_proyecto, "Assets", "Man of the World.mp3")
+
+    ruta_musica = os.path.join(ruta_proyecto, "Assets", "Homecoming.mp3")
 
     if os.path.exists(ruta_musica):
         pygame.mixer.music.load(ruta_musica)
@@ -27,7 +28,8 @@ def main():
 
     # Crear ventana principal
     root = tk.Tk()
-    root.title("Proyecto Gauss - PySolve Interactive")
+
+    root.title("Gauss-Solvex")
     root.geometry("700x500")
     root.minsize(500, 400)
 

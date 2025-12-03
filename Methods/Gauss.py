@@ -1,5 +1,15 @@
 import numpy as np
 
+def limpiar_num(x):
+    if abs(x) < 1e-9:
+        return 0
+    if abs(x - round(x)) < 1e-9:
+        return int(round(x))
+    return round(x, 4)
+
+def vector_lindo(v):
+    return "[" + ", ".join(str(limpiar_num(x)) for x in v) + "]"
+
 class SistemaLineal:
 
     def __init__(self, A, b):
@@ -182,10 +192,9 @@ class SistemaLineal:
         elif clasificacion == "Infinitas soluciones":
             x_p, vectores, libres = self.solucion_general_parametrica()
 
-            # Construimos representación simbólica
-            expresion = "x = " + str(x_p)
+            expresion = "x = " + vector_lindo(x_p)
             for i, v in enumerate(vectores):
-                expresion += f"  +  t{i+1} * {v}"
+                expresion += f"  +  t{i+1} * {vector_lindo(v)}"
 
             return {
                 "clasificacion": clasificacion,
@@ -206,5 +215,4 @@ class SistemaLineal:
 
 
 
-
-    
+ 
