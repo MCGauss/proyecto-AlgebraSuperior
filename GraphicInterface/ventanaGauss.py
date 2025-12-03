@@ -2,7 +2,7 @@ import tkinter as tk
 from tkinter import messagebox
 from Methods.inputsMatriz import VentanaMatriz
 from Methods.Gauss import SistemaLineal
-
+from Methods.Gauss import vector_lindo  # importar
 
 class VentanaGauss:
     def __init__(self, root):
