@@ -27,14 +27,12 @@ def pantallaFinal(root):
 
     try:
         img = Image.open(ruta_imagen)
-
-        # Opcional: reducir tamaño si la imagen es grande
-        img = img.resize((450, 200))  # puedes modificarlo
+        img = img.resize((450, 200))  # se puede modificar tamaño de imagen
 
         img_tk = ImageTk.PhotoImage(img)
 
         label_img = tk.Label(frame, image=img_tk)
-        label_img.image = img_tk  # ← evita que Python libere la imagen
+        label_img.image = img_tk  # evita que Python libere la imagen
         label_img.pack(pady=10)
 
     except Exception as e:
@@ -56,12 +54,14 @@ def pantallaFinal(root):
                         justify="center")
     creditos.pack(pady=20)
 
+    #Botón para regresar 
     btn_volver = tk.Button(frame, text="Regresar al inicio",
                            font=("Arial", 14),
                            width=18,
                            command=lambda: ventanaPortada(root))
     btn_volver.pack(pady=10)
-
+    
+    #Botón para salir
     btn_salir = tk.Button(frame, text="Salir",
                           font=("Arial", 14),
                           width=18,

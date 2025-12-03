@@ -26,7 +26,7 @@ def ventanaIntro(root):
     titulo.pack(pady=15)
 
     texto = (
-        "Este sistema permite resolver sistemas de ecuaciones lineales\n"
+        "Este Programa permite resolver sistemas de ecuaciones lineales\n"
         "por el método de Gauss. El programa ofrece:\n\n"
         "• Ingresar un sistema de ecuaciones de forma gráfica.\n"
         "• Determinar si el sistema tiene solución única.\n"
@@ -41,12 +41,14 @@ def ventanaIntro(root):
     btn_frame = tk.Frame(frame)
     btn_frame.pack(pady=20)
 
+    #Botón continuar llama a ventanaGauss
     btn_continuar = tk.Button(btn_frame, text="Continuar",
                               font=("Arial", 14),
                               width=15,
                               command=lambda: ventanaGauss())
     btn_continuar.grid(row=0, column=0, padx=10)
 
+    #Botón Salir llama a pantallaFianl
     btn_salir = tk.Button(btn_frame, text="Salir",
                           font=("Arial", 14),
                           width=15,

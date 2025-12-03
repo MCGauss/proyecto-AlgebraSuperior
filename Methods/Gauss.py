@@ -1,5 +1,8 @@
 import numpy as np
 
+# ================================================
+# Funciones auxiliares para formatear los numeros
+# ================================================
 def limpiar_num(x):
     if abs(x) < 1e-9:
         return 0
@@ -10,6 +13,9 @@ def limpiar_num(x):
 def vector_lindo(v):
     return "[" + ", ".join(str(limpiar_num(x)) for x in v) + "]"
 
+# ================================================
+# Clase principal para resolver sistemas lineales
+# ================================================
 class SistemaLineal:
 
     def __init__(self, A, b):
@@ -33,13 +39,13 @@ class SistemaLineal:
             if abs(M[max_row, pivote_col]) < 1e-9:
                 continue  # columna no tiene pivote, pasa a la siguiente
 
-            # intercambiar filas
+            # intercambiar filas para poner pivote arriba
             M[[pivote_fila, max_row]] = M[[max_row, pivote_fila]]
 
             # normalizar la fila del pivote
             M[pivote_fila] = M[pivote_fila] / M[pivote_fila, pivote_col]
 
-            # eliminar otras filas
+            # eliminar las demas filas
             for r in range(filas):
                 if r != pivote_fila:
                     M[r] = M[r] - M[r, pivote_col] * M[pivote_fila]
@@ -52,7 +58,7 @@ class SistemaLineal:
 
 
     # =========================
-    # RANGO (contar filas no nulas)
+    # Calcular Rango (contar filas no nulas)
     # =========================
     def rango(self, M):
         r = 0
@@ -88,41 +94,11 @@ class SistemaLineal:
 
 
     # =========================
-    # SOLUCIÓN PARTICULAR (si única)
+    # SOLUCIÓN PARTICULAR (si es única) con numpy
     # =========================
     def resolver_unica(self):
         return np.linalg.solve(self.A, self.b).tolist()
-
-
-    # =======================================================
-    # ESPACIO NULO (nullspace) 
-    # =======================================================
-    def nullspace(self):
-        R = self.gauss_jordan(self.A.copy())
-        filas, cols = R.shape
-
-        pivotes = []
-        for i in range(filas):
-            for j in range(cols):
-                if abs(R[i, j]) > 1e-9:
-                    pivotes.append(j)
-                    break
-
-        libres = [j for j in range(cols) if j not in pivotes]
-
-        base = []
-        for l in libres:
-            v = np.zeros(cols)
-            v[l] = 1
-
-            fila_p = 0
-            for col in pivotes:
-                if abs(R[fila_p, col]) > 1e-9:
-                    v[col] = -R[fila_p, l]
-                    fila_p += 1
-            base.append(v.tolist())
-
-        return base
+    
     # ======================================================
     # SOLUCIÓN GENERAL PARAMÉTRICA PARA INFINITAS SOLUCIONES
     # ======================================================
